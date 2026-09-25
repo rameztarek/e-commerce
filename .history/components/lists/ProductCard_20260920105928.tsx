@@ -1,0 +1,29 @@
+"use client"
+
+import Link from "next/link"
+import { ProductType } from "../types"
+import Image from "next/image"
+
+const ProductCard = ({product}: {product:ProductType}) => {
+  return (
+    <div className='shadow-lg rounded-lg overflow-hidden '>
+      <Link href={`product ${product.id}`}>
+      <div className="relative aspect-2/3">
+        <Image src={product.images[product.colors[0]]} alt={product.name} fill className="object-cover hover:scale-105 transition-all duration-300"/>
+      </div>
+      </Link>
+      {/* PRODUCT DETAILS */}
+      <div className="flex flex-col p-4 gap-4">
+        <h1 className=" font-medium ">{product.name}</h1>
+        <p className="text-gray-500 text-sm">{product.shortDescription}</p>
+        {/* PRODUCT TYPES */}
+        <div className="">
+          {/* SIZE */}
+          COLOR
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default ProductCard
