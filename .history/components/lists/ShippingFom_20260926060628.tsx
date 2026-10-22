@@ -1,0 +1,25 @@
+import { useForm } from "react-hook-form";
+import { ShippingFormInputs, shippingFormSchema } from "../types";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const ShippingFom = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ShippingFormInputs>({
+    resolver: zodResolver(shippingFormSchema),
+  });
+
+  return <form className="flex flex-col gap-4">
+    <div className="flex flex-col gap-1">
+      <label htmlFor="name" className="text-s">Name</label>
+      <input type="text" id="name" placeholder="John Doe" {...register('name')} />
+      {errors.name && (
+        <p>{errors.name.message}</p>
+      )}
+    </div>
+  </form>;
+};
+
+export default ShippingFom;

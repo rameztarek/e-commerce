@@ -1,13 +1,16 @@
-import ProductList from "@/components/lists/ProductList"
+import ProductList from "@/components/lists/ProductList";
 
-const ProductsPage = async ({ searchParams }: { searchParams: Promise<{ category: string }> }) => {
-  const category = (await searchParams).category
+const ProductsPage = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) => {
+  const { category } = await searchParams;
   return (
-    <div className=''>
-      <ProductList category={category} params="products" />
-
+    <div className="">
+      <ProductList category={category || "all"} params="products" />
     </div>
-  )
-}
+  );
+};
 
-export default ProductsPage
+export default ProductsPage;

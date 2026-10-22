@@ -86,7 +86,7 @@ const CartPage = () => {
   const router = useRouter();
 
   const actionStep = parseInt(searchParams.get("step") || "1");
-  const [shippingForm , setShippingForm] = useS
+  const [shippingForm , setShippingForm] = uses
 
   return (
     <div className="flex items-center flex-col gap-8  justify-center mt-12">

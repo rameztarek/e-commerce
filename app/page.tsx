@@ -3,7 +3,7 @@ import Image from "next/image"
 
 
 const Home = async ({ searchParams }: { searchParams: Promise<{ category: string }> }) => {
-  const category = (await searchParams).category
+  const { category } = await searchParams;
   return (
     <section className=''>
       <div className="relative aspect-3/1 mt-12">
