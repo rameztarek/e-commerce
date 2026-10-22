@@ -1,8 +1,0 @@
-import { create } from 'zustand'
-
-const useBear = create((set) => ({
-  cart: 0,
-  addToCart: () => set((state) => ({ bears: state.bears + 1 })),
-  removeCart: () => set({ bears: 0 }),
-  updateBears: (newBears) => set({ bears: newBears }),
-}))
